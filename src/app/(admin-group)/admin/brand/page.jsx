@@ -8,7 +8,7 @@ import { FiEdit } from 'react-icons/fi';
 
 export default async function CategoryTable() {
     const brandsJSON = await getBrands()
-    const brands = brandsJSON.data
+    const brands = brandsJSON?.data || [];
     console.log(brands);
 
     // Dummy data (you can replace this with real API data)
@@ -56,9 +56,9 @@ export default async function CategoryTable() {
                                         </button>
                                     </Link>
 
-                                    <StatusBtn url="brand" status={brand.status} id={brand._id} />
+                                    <StatusBtn url={`${process.env.NEXT_PUBLIC_API_BASE_URL}/brand`} status={brand.status} id={brand._id} />
 
-                                    <DeleteBtn url="brand" id={brand._id} />
+                                    <DeleteBtn url={`${process.env.NEXT_PUBLIC_API_BASE_URL}/brand`} id={brand._id} />
                                 </td>
                             </tr>
                         ))}
