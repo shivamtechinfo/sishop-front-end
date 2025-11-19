@@ -54,17 +54,17 @@ export default async function RootLayout({ children }) {
                                 </a>
                             </li>
                             <li className="text-sm font-semibold text-gray-800 truncate">
-                                Top Cell Phones & Tablets
+                                Top Cell Phones &amp; Tablets
                             </li>
                         </ol>
                     </section>
 
-                    {/* 📱 Top Cell Phones & Tablets Section */}
+                    {/* 📱 Top Cell Phones &amp; Tablets Section */}
                     <section className="border rounded-md p-4 bg-white shadow">
                         <h1 className="text-xl font-bold uppercase mb-4">Top Cell Phones & Tablets</h1>
                         <div className="flex flex-wrap gap-5">
                             <div className="relative w-full sm:w-[48%] h-80">
-                                <Image src="store/top cell phones & tablets/slider3.png" className="w-full h-full object-cover rounded-md" alt="logo" width={200} height={100} />
+                                <Image src="store/top cell phones &amp; tablets/slider3.png" className="w-full h-full object-cover rounded-md" alt="logo" width={200} height={100} />
                                 <div className="absolute top-10 left-10 space-y-3 text-white">
                                     <h1 className="text-2xl font-bold">Noise Cancelling</h1>
                                     <h3 className="text-lg">Headphone</h3>
@@ -76,7 +76,7 @@ export default async function RootLayout({ children }) {
                             <div className="relative w-full sm:w-[48%] h-80">
                                 import Image from "next/image";
 
-                                <Image src="store/top cell phones & tablets/banner1.png" alt="logo" className="w-full h-full object-cover rounded-md" width={200} height={100} />
+                                <Image src="store/top cell phones &amp; tablets/banner1.png" alt="logo" className="w-full h-full object-cover rounded-md" width={200} height={100} />
 
                                 <div className="absolute top-10 left-10 space-y-2 text-black">
                                     <h1 className="text-2xl font-bold">Redmi Note 12 <br />Pro+ 5G</h1>
