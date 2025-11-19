@@ -4,6 +4,7 @@ import BrandFilter from "@/components/website-components/BrandFilter";
 import ColorFilter from "@/components/website-components/ColorFilter";
 import PriceFilter from "@/components/website-components/PriceFilter";
 import { getBrands, getCategories, getColors } from "@/library/api-calls";
+import Image from "next/image";
 
 export default async function RootLayout({ children }) {
     {/* 🧭 get categories */ }
@@ -17,7 +18,7 @@ export default async function RootLayout({ children }) {
     {/* 🧭 get colors */ }
     const colorJSON = await getColors(null)
     const colors = colorJSON.data
-    
+
 
     return (
         <html lang="en">
@@ -63,7 +64,7 @@ export default async function RootLayout({ children }) {
                         <h1 className="text-xl font-bold uppercase mb-4">Top Cell Phones & Tablets</h1>
                         <div className="flex flex-wrap gap-5">
                             <div className="relative w-full sm:w-[48%] h-80">
-                                <img src="store/top cell phones & tablets/slider3.png" alt="" className="w-full h-full object-cover rounded-md" />
+                                <Image src="store/top cell phones & tablets/slider3.png" className="w-full h-full object-cover rounded-md" alt="logo" width={200} height={100} />
                                 <div className="absolute top-10 left-10 space-y-3 text-white">
                                     <h1 className="text-2xl font-bold">Noise Cancelling</h1>
                                     <h3 className="text-lg">Headphone</h3>
@@ -73,7 +74,10 @@ export default async function RootLayout({ children }) {
                             </div>
 
                             <div className="relative w-full sm:w-[48%] h-80">
-                                <img src="store/top cell phones & tablets/banner1.png" alt="" className="w-full h-full object-cover rounded-md" />
+                                import Image from "next/image";
+
+                                <Image src="store/top cell phones & tablets/banner1.png" alt="logo" className="w-full h-full object-cover rounded-md" width={200} height={100} />
+
                                 <div className="absolute top-10 left-10 space-y-2 text-black">
                                     <h1 className="text-2xl font-bold">Redmi Note 12 <br />Pro+ 5G</h1>
                                     <p className="text-sm text-gray-600">Rise to the challenge</p>
@@ -104,7 +108,8 @@ export default async function RootLayout({ children }) {
                                         <h1 className="font-semibold">{cat.title}</h1>
                                         <p className="text-sm text-gray-500">{cat.items} Items</p>
                                     </div>
-                                    <img src={`store/popular_categories/${cat.image}.png`} alt={cat.title} className="w-16 h-16 object-contain" />
+                                    <Image src={`store/popular_categories/${cat.image}.png`} className="w-16 h-16 object-contain" alt={cat.title} width={200} height={100} />
+
                                 </div>
                             ))}
                         </div>
@@ -123,7 +128,7 @@ export default async function RootLayout({ children }) {
                                 {/* Brand Filter */}
                                 <BrandFilter brands={brands} />
                                 {/* Color Filter */}
-                                <ColorFilter  colors={colors}/>
+                                <ColorFilter colors={colors} />
                                 {/* Price Filter */}
                                 <PriceFilter />
 
