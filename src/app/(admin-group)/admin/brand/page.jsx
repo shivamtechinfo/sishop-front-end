@@ -41,7 +41,7 @@ export default async function CategoryTable() {
                             <tr key={brand.id} className="border-b hover:bg-gray-50">
                                 <td className="px-4 py-3">
                                     <img
-                                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}images/brand/${brand.image}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/images/brand/${brand.image}`}
                                         alt={brand.name}
                                         className="w-12 h-12 object-cover rounded"
                                     />
