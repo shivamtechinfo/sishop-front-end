@@ -1,4 +1,3 @@
-
 import CategoryFilter from "@/components/website-components/CategoryFilter";
 import BrandFilter from "@/components/website-components/BrandFilter";
 import ColorFilter from "@/components/website-components/ColorFilter";
@@ -7,23 +6,23 @@ import { getBrands, getCategories, getColors } from "@/library/api-calls";
 import Image from "next/image";
 
 export default async function RootLayout({ children }) {
-    {/* 🧭 get categories */ }
-    const categoryJSON = await getCategories(null)
-    const categories = categoryJSON.data
+    // 🧭 get categories
+    const categoryJSON = await getCategories(null);
+    const categories = categoryJSON.data;
 
-    {/* 🧭 get brands */ }
-    const brandsJSON = await getBrands(null)
-    const brands = brandsJSON.data
+    // 🧭 get brands
+    const brandsJSON = await getBrands(null);
+    const brands = brandsJSON.data;
 
-    {/* 🧭 get colors */ }
-    const colorJSON = await getColors(null)
-    const colors = colorJSON.data
-
+    // 🧭 get colors
+    const colorJSON = await getColors(null);
+    const colors = colorJSON.data;
 
     return (
         <html lang="en">
             <body>
                 <div className="space-y-10 p-5 bg-gray-50">
+
                     {/* 🧭 Breadcrumb Section */}
                     <section className="border rounded-md p-4 bg-white shadow">
                         <ol className="flex items-center whitespace-nowrap space-x-2">
@@ -40,6 +39,7 @@ export default async function RootLayout({ children }) {
                                     <path d="M6 13L10 3" stroke="currentColor" strokeLinecap="round" />
                                 </svg>
                             </li>
+
                             <li className="inline-flex items-center">
                                 <a className="text-sm text-gray-500 hover:text-blue-600" href="#">
                                     Shop
@@ -53,35 +53,63 @@ export default async function RootLayout({ children }) {
                                     </svg>
                                 </a>
                             </li>
+
                             <li className="text-sm font-semibold text-gray-800 truncate">
                                 Top Cell Phones &amp; Tablets
                             </li>
                         </ol>
                     </section>
 
-                    {/* 📱 Top Cell Phones &amp; Tablets Section */}
+                    {/* 📱 Top Cell Phones & Tablets Section */}
                     <section className="border rounded-md p-4 bg-white shadow">
-                        <h1 className="text-xl font-bold uppercase mb-4">Top Cell Phones & Tablets</h1>
+                        <h1 className="text-xl font-bold uppercase mb-4">
+                            Top Cell Phones &amp; Tablets
+                        </h1>
+
                         <div className="flex flex-wrap gap-5">
+                            {/* LEFT BANNER */}
                             <div className="relative w-full sm:w-[48%] h-80">
-                                <Image src="store/top cell phones &amp; tablets/slider3.png" className="w-full h-full object-cover rounded-md" alt="logo" width={200} height={100} />
+                                <Image
+                                    src={"/store/top cell phones & tablets/slider3.png"}
+                                    className="w-full h-full object-cover rounded-md"
+                                    alt="top-category-slider"
+                                    width={500}
+                                    height={300}
+                                />
+
                                 <div className="absolute top-10 left-10 space-y-3 text-white">
                                     <h1 className="text-2xl font-bold">Noise Cancelling</h1>
                                     <h3 className="text-lg">Headphone</h3>
-                                    <p className="text-sm leading-tight">Boso Over-Ear Headphone <br />Wifi, Voice Assistant,<br />Low latency game mode</p>
-                                    <button className="px-4 py-2 bg-white text-black rounded-lg font-semibold">BUY NOW</button>
+                                    <p className="text-sm leading-tight">
+                                        Boso Over-Ear Headphone <br />
+                                        Wifi, Voice Assistant, <br />
+                                        Low latency game mode
+                                    </p>
+                                    <button className="px-4 py-2 bg-white text-black rounded-lg font-semibold">
+                                        BUY NOW
+                                    </button>
                                 </div>
                             </div>
 
+                            {/* RIGHT BANNER */}
                             <div className="relative w-full sm:w-[48%] h-80">
-                                import Image from "next/image";
 
-                                <Image src="store/top cell phones &amp; tablets/banner1.png" alt="logo" className="w-full h-full object-cover rounded-md" width={200} height={100} />
+                                <Image
+                                    src={"/store/top cell phones & tablets/banner1.png"}
+                                    alt="banner-phone"
+                                    className="w-full h-full object-cover rounded-md"
+                                    width={500}
+                                    height={300}
+                                />
 
                                 <div className="absolute top-10 left-10 space-y-2 text-black">
-                                    <h1 className="text-2xl font-bold">Redmi Note 12 <br />Pro+ 5G</h1>
+                                    <h1 className="text-2xl font-bold">
+                                        Redmi Note 12 <br /> Pro+ 5G
+                                    </h1>
                                     <p className="text-sm text-gray-600">Rise to the challenge</p>
-                                    <button className="mt-2 px-4 py-2 bg-black text-white rounded-lg">SHOP NOW</button>
+                                    <button className="mt-2 px-4 py-2 bg-black text-white rounded-lg">
+                                        SHOP NOW
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -90,6 +118,7 @@ export default async function RootLayout({ children }) {
                     {/* 🗂️ Popular Categories Section */}
                     <section className="border rounded-md p-4 bg-white shadow">
                         <h1 className="text-xl font-bold uppercase mb-4">Popular Categories</h1>
+
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                             {[
                                 { title: "iPhone (iOS)", items: 74, image: "iphone" },
@@ -103,35 +132,39 @@ export default async function RootLayout({ children }) {
                                 { title: "Samsung Tablets", items: 26, image: "samsung" },
                                 { title: "eReader", items: 5, image: "eReader" }
                             ].map((cat, i) => (
-                                <div key={i} className="flex justify-between items-center p-3 border rounded-md bg-gray-50">
+                                <div
+                                    key={i}
+                                    className="flex justify-between items-center p-3 border rounded-md bg-gray-50"
+                                >
                                     <div>
                                         <h1 className="font-semibold">{cat.title}</h1>
                                         <p className="text-sm text-gray-500">{cat.items} Items</p>
                                     </div>
-                                    <Image src={`store/popular_categories/${cat.image}.png`} className="w-16 h-16 object-contain" alt={cat.title} width={200} height={100} />
 
+                                    <Image
+                                        src={`/store/popular_categories/${cat.image}.png`}
+                                        className="w-16 h-16 object-contain"
+                                        alt={cat.title}
+                                        width={200}
+                                        height={100}
+                                    />
                                 </div>
                             ))}
                         </div>
                     </section>
 
-                    {/* 🧩 Content Area (children) */}
+                    {/* 🧩 Content Area */}
                     <section className="border rounded-md p-6 bg-white shadow">
                         <h1 className="text-xl font-bold mb-4">Main Content Area</h1>
 
                         <div className="flex w-full gap-6">
-                            {/* Left Sidebar: Filters */}
+
+                            {/* Left Sidebar */}
                             <div className="w-1/4 space-y-6">
-                                {/* Categories Filter */}
                                 <CategoryFilter categories={categories} />
-
-                                {/* Brand Filter */}
                                 <BrandFilter brands={brands} />
-                                {/* Color Filter */}
                                 <ColorFilter colors={colors} />
-                                {/* Price Filter */}
                                 <PriceFilter />
-
                             </div>
 
                             {/* Right Main Content */}
